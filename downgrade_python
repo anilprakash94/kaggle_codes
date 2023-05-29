@@ -1,0 +1,16 @@
+#Commands for downgrading Python version in Kaggle notebook
+
+#adds external APT repository
+!add-apt-repository -y 'ppa:deadsnakes/ppa'
+
+#installs specific python version
+!apt install -y python3.8
+
+#installs distutils package for the specific python version
+!apt-get install -y python3.8-distutils
+
+#Install Python modules using the newly installed Python version
+!sudo /usr/bin/python3.8 -m pip install -Iv <package-name>
+
+#Run Python scripts using the newly installed Python version
+!/usr/bin/python3.8 <python_script.py>
