@@ -10,6 +10,7 @@
 !apt-get install -y python3.8-distutils
 
 #Install Python modules using the newly installed Python version
+#-I, Ignores and overwrites the installed packages.
 !sudo /usr/bin/python3.8 -m pip install -Iv <package-name>
 
 #Run Python scripts using the newly installed Python version
