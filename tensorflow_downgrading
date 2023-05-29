@@ -1,0 +1,39 @@
+#Commands for downgrading Tensorflow to a specific version
+
+#Python has to be downgraded before installing Tensorflow(TF), if the TF version is not available for the default Python version. 
+
+#Adds external APT repository
+!add-apt-repository -y 'ppa:deadsnakes/ppa'
+
+#Installs specific python version
+!apt install -y python3.8
+
+#Installs distutils package for the specific python version
+!apt-get install -y python3.8-distutils
+
+#Installs Tensorflow specific version using the newly installed Python version
+!sudo /usr/bin/python3.8 -m pip install -Iv tensorflow==2.7.0
+
+#Downgrades protobuf to a suitable version
+!sudo /usr/bin/python3.8 -m pip install protobuf==3.19.1
+
+#Commands for installing cuDNN and CUDA on Ubuntu via Network Installation
+#Replace "ubuntu2004" with "debian11", "ubuntu1804" or "ubuntu2204" for respective versions in the following commands
+
+!wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin 
+
+!sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
+
+!sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/3bf863cc.pub
+
+!sudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /" -y
+
+!sudo apt-get update -y
+
+#Run a training script after the installation of dependencies
+!/usr/bin/python3.8 train.py
+
+
+
+
+
