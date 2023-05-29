@@ -11,6 +11,6 @@ Contains commands for Kaggle notebook.
 
 ## tensorflow_downgrading
 
-*Commands for downgarding Python
+*Commands for downgrading Python
 
 *Commands for installing specific versions of dependency packages using the downgraded Python
