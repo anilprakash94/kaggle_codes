@@ -17,7 +17,7 @@
 #Downgrades protobuf to a suitable version
 !sudo /usr/bin/python3.8 -m pip install protobuf==3.19.1
 
-#Commands for installing cuDNN and CUDA on Ubuntu via Network Installation
+#Commands for Network Repo Installation for Ubuntu
 #Replace "ubuntu2004" with "debian11", "ubuntu1804" or "ubuntu2204" for respective versions in the following commands
 
 !wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin 
@@ -29,6 +29,9 @@
 !sudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /" -y
 
 !sudo apt-get update -y
+
+#Install specific versions of cuddn and cuda.
+!sudo apt-get install libcudnn8=8.1.*-1+cuda11.2
 
 #Run a training script after the installation of dependencies
 !/usr/bin/python3.8 train.py
